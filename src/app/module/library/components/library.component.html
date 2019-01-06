@@ -1,0 +1,18 @@
+<div class="container"
+     *ngIf="_movies"
+>
+  <div class="row">
+    <div class="col-lg-4"
+         *ngFor="let movie of _movies"
+    >
+      <div style="margin:8px">
+        <app-movie [movie]="movie"
+                   icon="fa fa-minus"
+                   title="Add Movie Back To Home"
+                   (iconClick)="_removeMovieToLibrary($event)"
+                   readonly="true"
+        ></app-movie>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="movie">
+  <div class="movie-image">
+    <img [src]="movie?.Poster"
+         class="center-block img-thumbnail"
+    >
+  </div>
+  <div class="movie__wrapper">
+    <div class="movie__wrapper-icon"
+         (click)="_onIconClick()"
+    >
+      <i [class]="icon"
+         [title]="title"
+      ></i>
+    </div>
+    <app-rating [movie]="movie"
+                (ratingClick)='_onRatingClick()'
+                [readOnly]="readOnly"
+    ></app-rating>
+    <div class="movie__wrapper-title">{{movie?.Title}}</div>
+  </div>
+
+</div>
+

@@ -1,0 +1,23 @@
+<input type="search"
+       [(ngModel)]="searchText"
+       class="home__search"
+       placeholder="Search Movies..."
+>
+<div class="container"
+     *ngIf="_movies"
+>
+  <div class="row">
+    <div class="col-lg-4"
+         *ngFor="let movie of _filterMovies"
+    >
+      <div style="margin:8px">
+        <app-movie [movie]="movie"
+                   icon="fa fa-plus"
+                   title="Add Movie to Library"
+                   (iconClick)="_addMovieToLibrary($event)"
+                   (ratingClicked)="_updateRating($event)"
+        ></app-movie>
+      </div>
+    </div>
+  </div>
+</div>
